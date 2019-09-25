@@ -5,7 +5,7 @@
 
 library(tidyverse)
 #Exercise 1----
-shrub_vol <- read_csv("data/shrub-volume-data.csv")
+shrub_vol <- read_csv("./data/shrub-volume-data.csv")
 names(shrub_vol)
 str(shrub_vol)
 head(shrub_vol)
@@ -30,7 +30,7 @@ by_experiment <- group_by(shrub_vol, experiment)
 (max_site_height <- summarize(by_site, max_site_height = max(height)))
 
 #Exercise 3 fix the code----
-read_csv("data/shrub-volume-data.csv")
+read_csv("./data/shrub-volume-data.csv")
 shrub_vol %>%
   mutate(volume = length * width * height) %>%
   group_by(site) %>%
@@ -42,7 +42,7 @@ shrub_vol %>%
 
 #Exercise 4 pipes----
 #use mutate(), select(),and na.omit() with pipes
-surveys <- read_csv("data/surveys.csv")
+surveys <- read_csv("./data/surveys.csv")
 surveys2 <- surveys %>%
   na.omit() %>%
   mutate(weight_kg = weight/1000) 
